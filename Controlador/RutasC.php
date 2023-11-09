@@ -1,0 +1,18 @@
+<?php
+    class RutasControlador{
+        public function Plantilla(){
+            include "Vista/plantilla.php";
+        }
+
+        public function Rutas(){
+            if(isset($_GET["ruta"])){
+                $rutas = $_GET["ruta"];
+            }else{
+                $rutas = "indicaciones";
+            }
+            $respuesta = Modelo::RutasModelo($rutas);
+
+            include $respuesta;
+        }
+    }
+?>
