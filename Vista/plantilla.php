@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Inicio Sesión</title>
+    <title>Administración</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,33 +12,17 @@
 
 </head>
 <body>
-    <header class="cent-v-h">
-        <div>
-            <img src="Vista/img/logoof.svg" alt="logo" width="150">
-        </div>
-    </header>
-
-
-    <div class="mx-auto cajasesion">
-        <form method="post">
-            <div align="center">
-                <p class="plog">Sistema Museum Administración</p>
-                <img src="Vista/img/logoof.svg" width="250" alt="logo">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Clave</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="llog btn btn-dark">Ingresar</button>
-        </form>
-    </div>
-
     
+    <?php
+        include "Modulos/menu.php";
+    ?>
 
+    <section>
+        <?php
+            $rutas = new RutasControlador();
+            $rutas -> Rutas();
+        ?>
+    </section>
 
     <footer>
         <section id="pie" class="cent-v">
