@@ -26,24 +26,25 @@
         </div>
     </header>
 
-
-    <div class="mx-auto cajasesion">
-        <form method="post">
-            <div align="center">
-                <p class="plog">Sistema Museum <br> <strong>Administración</strong></p>
-                <img src="Vista/img/logoof.svg" width="250" alt="logo">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuarioadmin">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Clave</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="claveadmin">
-            </div>
-            <button type="submit" class="llog btn btn-dark">Ingresar</button>
-        </form>
-    </div>
+    <section class="fondosesion">
+        <div class="mx-auto cajasesion">
+            <form method="post">
+                <div align="center">
+                    <p class="plog">Sistema Museum <br> <strong>Administración</strong></p>
+                    <img src="Vista/img/logoof.svg" width="250" alt="logo">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuarioadmin">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Clave</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="claveadmin">
+                </div>
+                <button type="submit" class="llog btn btn-dark">Ingresar</button>
+            </form>
+        </div>
+    </section>
 
     <?php
         $ingreso = new LoginC();

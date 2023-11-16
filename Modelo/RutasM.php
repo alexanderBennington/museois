@@ -1,7 +1,7 @@
 <?php
     class Modelo{
         static public function RutasModelo($rutas){
-            if($rutas == "inicioadmin" || $rutas == "Nuevo" || $rutas == "Salir"){
+            if($rutas == "inicioadmin" || $rutas == "Nuevo" || $rutas == "salir"){
                 $pagina = "Vista/Modulos/".$rutas.".php";
             }else if($rutas == "indicaciones"){
                 $pagina = "Vista/Modulos/inicioadmin.php";

@@ -27,7 +27,7 @@
         <form method="post">
             <div align="center">
                 <p class="plog">Sistema Museum <br> <strong>Administración</strong></p>
-                <p>Error Al Ingresar Credenciales</p>
+                <p class="errorsesion"><strong>Error Al Ingresar Credenciales</strong></p>
                 <img src="Vista/img/logoof.svg" width="250" alt="logo">
             </div>
             <div class="mb-3">
