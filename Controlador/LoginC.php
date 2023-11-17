@@ -16,7 +16,7 @@
                         $_SESSION["apellido_paterno"] = $respuesta["apellido_paterno"];
                         $_SESSION["apellido_materno"] = $respuesta["apellido_materno"];
                         $_SESSION["area"] = $respuesta["area"];
-                        header("location:Indicaciones.php?ruta=inicioadmin");
+                        header("location:Indicacioneseorlovr1500.php?ruta=inicioadmin");
                     }else{
                         header("location:sesionadminerror.php");
                     }

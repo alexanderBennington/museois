@@ -1,14 +1,14 @@
 <?php
     class RutasControlador{
         public function Plantilla(){
-            include "Vista/plantilla.php";
+            include "Vista/plantillaAdmin.php";
         }
 
         public function Rutas(){
             if(isset($_GET["ruta"])){
                 $rutas = $_GET["ruta"];
             }else{
-                $rutas = "indicaciones";
+                $rutas = "indicacionesAdmin";
             }
             $respuesta = Modelo::RutasModelo($rutas);
 

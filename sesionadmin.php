@@ -3,7 +3,7 @@
     require_once "Modelo/LoginM.php";
 	session_start();
 	if(isset($_SESSION["ingreso"])){
-		header("location:indicaciones.php");
+		header("location:indicacionesAdmin.php");
 	}
 ?>
 <!DOCTYPE html>
