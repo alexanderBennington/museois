@@ -21,6 +21,9 @@
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=editarempleados">Empleados</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=editaranuncios">Anuncios</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=salir">Cerrar Sesión</a>
                     </li>
                 </ul>

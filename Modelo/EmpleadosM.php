@@ -66,7 +66,7 @@
 
         static public function MostrarEmpleadosM($tablaBD){
             $pdo = ConexionBD::cBD() -> prepare("SELECT id, nombre, apellido_paterno, apellido_materno, fecha_ingreso, rfc, curp, nss, 
-            escolaridad, zona, cv, tipo, usuario, clave FROM $tablaBD ");
+                escolaridad, zona, cv, tipo, usuario, clave FROM $tablaBD ");
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close(); 
