@@ -10,5 +10,16 @@
             }
             return $pagina;
         }
+
+        static public function RutasModeloPublico($rutas){
+            if($rutas == "principal"){
+                $pagina = "Vista/ModulosPrincipal/".$rutas.".php";
+            }else if($rutas == "index"){
+                $pagina = "Vista/ModulosPrincipal/principal.php";
+            }else{
+                $pagina = "Vista/ModulosPrincipal/principal.php";
+            }
+            return $pagina;
+        }
     }
 ?>

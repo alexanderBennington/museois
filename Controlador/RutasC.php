@@ -14,5 +14,20 @@
 
             include $respuesta;
         }
+
+        public function PlantillaPublico(){
+            include "Vista/plantillaPublico.php";
+        }
+
+        public function RutasPublico(){
+            if(isset($_GET["ruta"])){
+                $rutas = $_GET["ruta"];
+            }else{
+                $rutas = "index";
+            }
+            $respuesta = Modelo::RutasModeloPublico($rutas);
+
+            include $respuesta;
+        }
     }
 ?>

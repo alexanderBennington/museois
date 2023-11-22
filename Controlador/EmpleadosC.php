@@ -64,7 +64,7 @@
                     <td>'.$value["escolaridad"].'</td>
                     <td>'.$value["zona"].'</td>
                     <td>'.$value["tipo"].'</td>
-                    <td>'.$value["cv"].'</td>
+                    <td><a href="Vista/img/empleados/'.$value["cv"].'" target="_blank">'.$value["cv"].'</a></td>
                     <td>'.$value["usuario"].'</td>
                     <td>'.$value["clave"].'</td>
                     <th class="boton">ESCOGER</th>

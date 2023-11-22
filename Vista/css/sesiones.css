@@ -144,3 +144,7 @@ h2{
     overflow: auto;
     margin-bottom: 50px;
 }
+
+a{
+    text-decoration: none;
+}
