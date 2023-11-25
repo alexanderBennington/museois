@@ -18,6 +18,9 @@
                         <a class="nav-link active" aria-current="page" href="indicacionesAdmin.php?ruta=inicioadmin">Inicio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="indicacionesAdmin.php?ruta=editaradministracion">Administración</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=editarempleados">Empleados</a>
                     </li>
                     <li class="nav-item">

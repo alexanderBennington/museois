@@ -9,7 +9,7 @@
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
-                    header("location:Vista/Modulos/ErrorSQLAdmin.php");
+                    header("location:Vista/Modulos/ErrorSQL.php");
                 }
             }
         }
@@ -23,7 +23,7 @@
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
-                    header("location:Vista/Modulos/ErrorSQLAdmin.php");
+                    header("location:Vista/Modulos/ErrorSQL.php");
                 }
             }
         }
@@ -36,7 +36,7 @@
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
-                    header("location:Vista/Modulos/ErrorSQLAdmin.php");
+                    header("location:Vista/Modulos/ErrorSQL.php");
                 }
             }
         }

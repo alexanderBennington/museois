@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!$_SESSION["ingreso"]){
-		header("location:sesionadmin.php");
+		header("location:index.php");
 		exit();
 	}
 ?>
