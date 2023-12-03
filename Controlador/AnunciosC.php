@@ -50,7 +50,7 @@
                     <td>'.$value["id"].'</td>
                     <td>'.$value["titulo"].'</td>
                     <td>'.$value["subtitulo"].'</td>
-                    <td>'.$value["contenido"].'</td>
+                    <td><div class="over-y">'.$value["contenido"].'</div></td>
                     <td><a href="Vista/img/anuncios/'.$value["imagen"].'" target="_blank">'.$value["imagen"].'</a></td>
                     <td>'.$value["dato1"].'</td>
                     <td>'.$value["dato2"].'</td>

@@ -148,3 +148,8 @@ h2{
 a{
     text-decoration: none;
 }
+
+.over-y{
+    overflow-y: scroll;
+    max-height: 200px;
+}
