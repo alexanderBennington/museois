@@ -7,6 +7,12 @@
     require_once "Modelo/AnunciosM.php";
     require_once "Controlador/AdministradoresC.php";
     require_once "Modelo/AdministradoresM.php";
+    require_once "Controlador/ZonasC.php";
+    require_once "Modelo/ZonasM.php";
+    require_once "Controlador/ColeccionC.php";
+    require_once "Modelo/ColeccionM.php";
+    require_once "Controlador/VisitasC.php";
+    require_once "Modelo/VisitasM.php";
     $rutas = new RutasControlador();
     $rutas -> Plantilla();
 ?>

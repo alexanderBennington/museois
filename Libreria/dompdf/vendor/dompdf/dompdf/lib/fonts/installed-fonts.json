@@ -1,0 +1,17 @@
+{
+    "notosans-light": {
+        "normal": "notosans_light_normal_f8cc901ba6f8f864c576c6a1576e15a5"
+    },
+    "notosans-thin": {
+        "normal": "notosans_thin_normal_68dff69010cd5c90a33490cd3a53a0c9"
+    },
+    "notosans-regular": {
+        "normal": "notosans_regular_normal_e45aba0ef7a69e4fcbbe153cda695aa0"
+    },
+    "notosans-semibolditalic": {
+        "normal": "notosans_semibolditalic_normal_a28cc0fa35ccefda4c282ed60b77d9f1"
+    },
+    "notosans-semibold": {
+        "normal": "notosans_semibold_normal_f0786da5803225467fe447e6adb74fd7"
+    }
+}

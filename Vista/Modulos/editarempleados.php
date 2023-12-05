@@ -58,13 +58,16 @@
                 <div class="mb-3">
                     <label for="exampleDataList" class="form-label">ZONA</label>
                     <select class="form-select" aria-label="Default select example" name=zonaempA required>
-                        <option value="1">SECUNDARIA</option>
-                        <option value="2">BACHILLERATO</option>
+                        <?php
+                            $mostrarareas = new ZonasC();
+                            $mostrarareas -> MostrarZonasOpciones2C();
+                        ?>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">TIPO DE EMPLEADO</label>
                     <select class="form-select" aria-label="Default select example" name=tipoempA required>
+                        <option value="INFORMATICO">INFORMATICO</option>
                         <option value="INTENDENCIA">INTENDENCIA</option>
                         <option value="MONITOR">MONITOR</option>
                         <option value="GUIA">GUIA</option>
@@ -138,15 +141,19 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                <label for="exampleDataList" class="form-label">ZONA</label>
+                <div class="mb-3">
+                    <label for="exampleDataList" class="form-label">ADMINISTRACIÓN</label>
                     <select class="form-select" aria-label="Default select example" name=zonaempE required>
-                        <option value="1">SECUNDARIA</option>
-                        <option value="2">BACHILLERATO</option>
+                        <?php
+                            $mostrarareas = new ZonasC();
+                            $mostrarareas -> MostrarZonasOpciones2C();
+                        ?>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">TIPO DE EMPLEADO</label>
                     <select class="form-select" aria-label="Default select example" name=tipoempE required>
+                        <option value="INFORMATICO">INFORMATICO</option>
                         <option value="INTENDENCIA">INTENDENCIA</option>
                         <option value="MONITOR">MONITOR</option>
                         <option value="GUIA">GUIA</option>

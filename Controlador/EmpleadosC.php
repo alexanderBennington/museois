@@ -4,6 +4,7 @@
             if(isset($_POST["idempA"])){
                 //$fecha = $_POST['fechaempA'];
                 //$fechaBD = date("d-m-Y", strtotime($fecha));
+                //$texto_sin_espacios_inicio_final = trim($nomreempA);
                 $datosC = array("id" => $_POST["idempA"],  "nombre" => $_POST["nombreempA"], "apellidop" => $_POST["appempA"], "apellidom" => $_POST["apmempA"],
                     "fecha" => $_POST["fechaempA"], "rfc" => $_POST["rfcempA"], "curp" => $_POST["curpempA"], "nss" => $_POST["nssempA"], 
                     "escolaridad" => $_POST["escolaridadempA"], "zona" => $_POST["zonaempA"], "cv" => $_POST["cvempA"], "tipo" => $_POST["tipoempA"], 
@@ -62,13 +63,46 @@
                     <td>'.$value["curp"].'</td>
                     <td>'.$value["nss"].'</td>
                     <td>'.$value["escolaridad"].'</td>
-                    <td>'.$value["zona"].'</td>
+                    <td>'.$value["area"].'</td>
                     <td>'.$value["tipo"].'</td>
                     <td><a href="Vista/img/empleados/'.$value["cv"].'" target="_blank">'.$value["cv"].'</a></td>
                     <td>'.$value["usuario"].'</td>
                     <td>'.$value["clave"].'</td>
                     <th class="boton">ESCOGER</th>
                 </tr>';
+            }
+        }
+
+        public function MostrarInvestigadoresC(){
+            $tablaBD = "empleados";
+            $respuesta = EmpleadosM::MostrarInvestigadoresM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">
+                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["tipo"].'
+                </option>';
+            }
+        }
+
+        public function MostrarGuiasC(){
+            $tablaBD = "empleados";
+            $respuesta = EmpleadosM::MostrarGuiasM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">
+                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                </option>';
+            }
+        }
+
+        public function MostrarMonitoresC(){
+            $tablaBD = "empleados";
+            $respuesta = EmpleadosM::MostrarMonitoresM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">
+                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                </option>';
             }
         }
     }

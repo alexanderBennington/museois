@@ -47,6 +47,7 @@
                         <option value="OPERATIVO_TAQ">OPERATIVO Y TAQUILLAS</option>
                         <option value="PORTAL_INF">PORTAL E INFORMÁTICA</option>
                         <option value="SEGURIDAD">SEGURIDAD</option>
+                        <option value="INTENDENCIA">INTENDENCIA</option>
                     </select>
                 </div>
                 <div class="mb-3">
@@ -105,6 +106,7 @@
                         <option value="OPERATIVO_TAQ">OPERATIVO Y TAQUILLAS</option>
                         <option value="PORTAL_INF">PORTAL E INFORMÁTICA</option>
                         <option value="SEGURIDAD">SEGURIDAD</option>
+                        <option value="INTENDENCIA">INTENDENCIA</option>
                     </select>
                 </div>
                 <div class="mb-3">
