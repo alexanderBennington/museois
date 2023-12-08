@@ -50,8 +50,9 @@
                 <div class="mb-3">
                     <label for="exampleDataList" class="form-label">ESTADO</label>
                     <select class="form-select" aria-label="Default select example" name=estadoA required>
-                        <option value="ABIERTO">PENDIENTE</option>
-                        <option value="CERRADO">CONCLUIDO</option>
+                        <option value="PENDIENTE">PENDIENTE</option>
+                        <option value="CONCLUIDO">CONCLUIDO</option>
+                        <option value="CANCELADO">CANCELADO</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-danger">AGREGAR</button>
@@ -62,30 +63,52 @@
             ?>
         </div>
         <div class="col">
-        <h2 align="center">EDITAR</h2>
-        <form method="post">
+            <h2 align="center">EDITAR</h2>
+            <form method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">ID</label>
-                    <input class="form-control" id="a1" aria-describedby="emailHelp" name=idE required>
+                    <input class="form-control" id="a1" aria-describedby="emailHelp" name=idE required readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">NOMBRE</label>
-                    <input class="form-control" id="a2" aria-describedby="emailHelp" name=nombreE required>
+                    <label for="exampleInputEmail1" class="form-label">GRUPO</label>
+                    <input class="form-control" id="a2" aria-describedby="emailHelp" name=grupoE required>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleDataList" class="form-label">ADMINISTRACIÓN</label>
-                    <select class="form-select" aria-label="Default select example" name=adminE required>
+                    <label for="exampleInputEmail1" class="form-label">FECHA DE VISITA</label>
+                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name=fechaE required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">HORA DE ENTRADA</label>
+                    <input type="text" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Formato de 24 horas HH:mm" class="form-control" id="a3" aria-describedby="emailHelp" name=horaeE required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">HORA DE SALIDA</label>
+                    <input type="text" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" title="Formato de 24 horas HH:mm" class="form-control" id="a4" aria-describedby="emailHelp" name=horasE required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleDataList" class="form-label">GUIA</label>
+                    <select class="form-select" aria-label="Default select example" name=guiaE required>
                         <?php
-                            $mostrarareas = new ZonasC();
-                            $mostrarareas -> MostrarZonasOpcionesC();
+                            $mostrarguia = new EmpleadosC();
+                            $mostrarguia -> MostrarGuiasC();
+                        ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleDataList" class="form-label">MONITOR</label>
+                    <select class="form-select" aria-label="Default select example" name=monitorE required>
+                        <?php
+                            $mostrarmonitor = new EmpleadosC();
+                            $mostrarmonitor -> MostrarMonitoresC();
                         ?>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="exampleDataList" class="form-label">ESTADO</label>
                     <select class="form-select" aria-label="Default select example" name=estadoE required>
-                        <option value="ABIERTO">ABIERTO</option>
-                        <option value="CERRADO">CERRADO</option>
+                        <option value="PENDIENTE">PENDIENTE</option>
+                        <option value="CONCLUIDO">CONCLUIDO</option>
+                        <option value="CANCELADO">CANCELADO</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-danger">EDITAR</button>
@@ -107,11 +130,11 @@
             <form method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">ID</label>
-                    <input class="form-control" id="a3" aria-describedby="emailHelp" name=idEL required readonly>
+                    <input class="form-control" id="a5" aria-describedby="emailHelp" name=idEL required readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">NOMBRE</label>
-                    <input class="form-control" id="a4" aria-describedby="emailHelp" required readonly>
+                    <label for="exampleInputEmail1" class="form-label">GRUPO</label>
+                    <input class="form-control" id="a6" aria-describedby="emailHelp" name=grupoEL required readonly>
                 </div>
                 <button type="submit" class="btn btn-danger">ELIMINAR</button>
             </form>
@@ -133,9 +156,14 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">NOMBRE</th>
-                    <th scope="col">ADMINISTRACIÓN</th>
+                    <th scope="col">GRUPO</th>
+                    <th scope="col">FECHA REGISTRO</th>
+                    <th scope="col">VISITA PROGRAMADA</th>
+                    <th scope="col">HORA ENTRADA</th>
+                    <th scope="col">HORA SALIDA</th>
                     <th scope="col">ESTADO</th>
+                    <th scope="col">GUIA</th>
+                    <th scope="col">MONITOR</th>
                 </tr>
             </thead>
             <tbody>
@@ -147,6 +175,6 @@
         </table>
     </div>
 </div>
-<script src="Vista/js/zonas.js"></script>
+<script src="Vista/js/visitas.js"></script>
 
 </div>

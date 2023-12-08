@@ -92,5 +92,12 @@
             return $pdo -> fetchAll();
             $pdo -> close(); 
         }
+
+        static public function MostrarEncargadosColeccionM($tablaBD){
+            $pdo = ConexionBD::cBD() -> prepare("SELECT id, nombre, apellido_paterno, apellido_materno FROM empleados WHERE tipo = 'CONS_REST'");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+            $pdo -> close(); 
+        }
     }
 ?>

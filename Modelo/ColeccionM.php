@@ -51,5 +51,12 @@
             return $pdo -> fetchAll();
             $pdo -> close(); 
         }
+
+        static public function MostrarColeccionesSelectM($tablaBD){
+            $pdo = ConexionBD::cBD() -> prepare("SELECT * FROM $tablaBD ORDER BY nombre_obra");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+            $pdo -> close(); 
+        }
     }
 ?>

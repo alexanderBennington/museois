@@ -22,6 +22,8 @@ function obtenerValores(e) {
     
     document.getElementById('a1').value = elementosTD[0].innerHTML;
     document.getElementById('a2').value = elementosTD[1].innerHTML;
-    document.getElementById('a3').value = elementosTD[0].innerHTML;
-    document.getElementById('a4').value = elementosTD[1].innerHTML;
+    document.getElementById('a3').value = elementosTD[4].innerHTML;
+    document.getElementById('a4').value = elementosTD[5].innerHTML;
+    document.getElementById('a5').value = elementosTD[0].innerHTML;
+    document.getElementById('a6').value = elementosTD[1].innerHTML;
 }

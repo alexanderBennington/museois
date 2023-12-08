@@ -79,7 +79,7 @@
             foreach($respuesta as $key => $value){
             echo 
                 '<option value="'.$value["id"].'">
-                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["tipo"].'
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["tipo"].'
                 </option>';
             }
         }
@@ -90,7 +90,7 @@
             foreach($respuesta as $key => $value){
             echo 
                 '<option value="'.$value["id"].'">
-                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
                 </option>';
             }
         }
@@ -101,7 +101,18 @@
             foreach($respuesta as $key => $value){
             echo 
                 '<option value="'.$value["id"].'">
-                    '.$value["id"].' '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                </option>';
+            }
+        }
+
+        public function MostrarEncargadosColeccionC(){
+            $tablaBD = "empleados";
+            $respuesta = EmpleadosM::MostrarEncargadosColeccionM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
                 </option>';
             }
         }

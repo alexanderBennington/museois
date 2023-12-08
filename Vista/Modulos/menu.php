@@ -36,6 +36,9 @@
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=editarvisitas">Visitas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=solicitud">Solicitud</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=salir">Cerrar Sesión</a>
                     </li>
                 </ul>

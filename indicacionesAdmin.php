@@ -13,6 +13,8 @@
     require_once "Modelo/ColeccionM.php";
     require_once "Controlador/VisitasC.php";
     require_once "Modelo/VisitasM.php";
+    require_once "Controlador/SolicitudC.php";
+    require_once "Modelo/SolicitudM.php";
     $rutas = new RutasControlador();
     $rutas -> Plantilla();
 ?>

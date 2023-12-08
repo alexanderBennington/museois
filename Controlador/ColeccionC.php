@@ -54,5 +54,14 @@
                 </tr>';
             }
         }
+
+        public function MostrarColeccionesSelectC(){
+            $tablaBD = "coleccion";
+            $respuesta = ColeccionM::MostrarColeccionesSelectM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">'.$value["nombre_obra"].'</option>';
+            }
+        }
     }
 ?>

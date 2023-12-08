@@ -1,10 +1,11 @@
 <?php
     class VisitasC{
-        public function NuevoZonaC(){
-            if(isset($_POST["idA"])){
-                $datosC = array("id" => $_POST["idA"],  "nombre" => $_POST["nombreA"], "administracion" => $_POST["adminA"], "estado" => $_POST["estadoA"]);
-                $tablaBD = "zona_museo";
-                $respuesta = ZonasM::NuevoZonaM($datosC, $tablaBD); 
+        public function NuevoVisitaC(){
+            if(isset($_POST["grupoA"])){
+                $datosC = array("grupo" => $_POST["grupoA"],  "fecha" => $_POST["fechaA"], "horae" => $_POST["horaeA"], "horas" => $_POST["horasA"], "guia" => $_POST["guiaA"],
+                    "monitor" => $_POST["monitorA"], "estado" => $_POST["estadoA"]);
+                $tablaBD = "Visitas";
+                $respuesta = VisitasM::NuevoVisitaM($datosC, $tablaBD); 
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
@@ -13,11 +14,12 @@
             }
         }
 
-        public function EditarZonaC(){
+        public function EditarVisitaC(){
             if(isset($_POST["idE"])){
-                $datosC = array("id" => $_POST["idE"], "nombre" => $_POST["nombreE"],  "administracion" => $_POST["adminE"], "estado" => $_POST["estadoE"]);
-                $tablaBD = "zona_museo";
-                $respuesta = ZonasM::EditarZonaM($datosC, $tablaBD); 
+                $datosC = array("id" => $_POST["idE"], "grupo" => $_POST["grupoE"],  "fecha" => $_POST["fechaE"], "horae" => $_POST["horaeE"], "horas" => $_POST["horasE"], 
+                "guia" => $_POST["guiaE"], "monitor" => $_POST["monitorE"], "estado" => $_POST["estadoE"]);
+                $tablaBD = "Visitas";
+                $respuesta = VisitasM::EditarVisitaM($datosC, $tablaBD); 
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
@@ -26,11 +28,11 @@
             }
         }
 
-        public function EliminarZonaC(){
+        public function EliminarVisitaC(){
             if(isset($_POST["idEL"])){
                 $datosC = $_POST["idEL"];
-                $tablaBD = "zona_museo";
-                $respuesta = ZonasM::EliminarZonaM($datosC, $tablaBD);
+                $tablaBD = "Visitas";
+                $respuesta = VisitasM::EliminarVisitaM($datosC, $tablaBD);
                 if($respuesta == "Bien"){
                     echo "<script>console.log('Bien');</script>";
                 }else{
@@ -39,16 +41,21 @@
             }
         }
 
-        public function MostrarZonasC(){
-            $tablaBD = "zona_museo";
-            $respuesta = ZonasM::MostrarZonasM($tablaBD);
+        public function MostrarVisitasC(){
+            $tablaBD = "Visitas";
+            $respuesta = VisitasM::MostrarVisitasM($tablaBD);
             foreach($respuesta as $key => $value){
             echo 
                 '<tr>
                     <td>'.$value["id"].'</td>
-                    <td>'.$value["nombre"].'</td>
-                    <td>'.$value["area"].'</td>
+                    <td>'.$value["grupo"].'</td>
+                    <td>'.$value["fecha_registro"].'</td>
+                    <td>'.$value["fecha_visita"].'</td>
+                    <td>'.$value["hora_entrada"].'</td>
+                    <td>'.$value["hora_salida"].'</td>
                     <td>'.$value["estado"].'</td>
+                    <td>'.$value["id_emp1"].' '.$value["nombre1"].' '.$value["app1"].' '.$value["apm1"].'</td>
+                    <td>'.$value["id_emp2"].' '.$value["nombre2"].' '.$value["app2"].' '.$value["apm2"].'</td>
                     <th class="boton">ESCOGER</th>
                 </tr>';
             }
