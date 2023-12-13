@@ -45,5 +45,36 @@
                 return "error";
             }
         }
+
+        static public function MostrarSolicitudAprobadaM($tablaBD){
+            $pdo = ConexionBD::cBD() -> 
+            prepare("SELECT s.id, c.nombre_obra, s.fecha, s.detalles, e.nombre, e.apellido_paterno, e.apellido_materno 
+                FROM coleccion c JOIN solicitud s ON s.id_articulo = c.id 
+                JOIN empleados e ON e.id = s.id_encargado WHERE s.estado = 'APROBADO' ORDER BY s.id DESC");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+            $pdo -> close(); 
+        }
+
+        static public function MostrarDetallesReporteM($tablaBD, $id){
+            $pdo = ConexionBD::cBD() -> 
+            prepare("SELECT s.id, c.nombre_obra, e.nombre, e.apellido_paterno, e.apellido_materno 
+                FROM coleccion c JOIN solicitud s ON s.id_articulo = c.id 
+                JOIN empleados e ON e.id = s.id_encargado WHERE s.id = :id");
+            $pdo -> bindParam(":id", $id, PDO::PARAM_INT);
+            $pdo -> execute();
+            return $pdo -> fetchAll(); 
+        }
+
+        static public function ActualizarSolicitudM($id){
+            $pdo = ConexionBD::cBD() -> 
+            prepare("UPDATE solicitud SET estado = 'TERMINADO' WHERE id = :id");
+            $pdo -> bindParam(":id", $id["id_solicitud"], PDO::PARAM_INT);
+            if($pdo -> execute()){
+                return "Bien";
+            }else{
+                return "error";
+            }
+        }
     }
 ?>

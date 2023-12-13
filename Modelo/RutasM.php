@@ -3,7 +3,7 @@
         static public function RutasModelo($rutas){
             if($rutas == "inicioadmin" || $rutas == "editarempleados" || $rutas == "editaranuncios" || $rutas == "editaradministracion" 
                 || $rutas == "editarzonas" || $rutas == "editarcoleccion" || $rutas == "editarvisitas" ||  $rutas == "solicitud" 
-                || $rutas == "salir"){
+                ||  $rutas == "reportes" ||  $rutas == "generarreportes" || $rutas == "salir"){
                 $pagina = "Vista/Modulos/".$rutas.".php";
             }else if($rutas == "indicacionesAdmin"){
                 $pagina = "Vista/Modulos/inicioadmin.php";

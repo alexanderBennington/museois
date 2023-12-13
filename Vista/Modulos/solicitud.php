@@ -53,7 +53,7 @@
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th scope="col">No. DE REPORTE</th>
+                    <th scope="col">No. DE SOLICITUD</th>
                     <th scope="col">ARTICULO</th>
                     <th scope="col">ENCARGADO</th>
                     <th scope="col">FECHA DE REGISTRO</th>
