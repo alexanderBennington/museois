@@ -137,6 +137,19 @@ h2{
     text-align: center;
     font-weight: normal;
     width: 100px;
+    height: 50px;
+}
+
+.boton-aprobar{
+    background-color: rgb(53, 220, 75) !important;
+    border-color: #138f13;
+    color: black !important;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: normal;
+    width: 100px;
+    height: 50px;
 }
 
 .tablaover{
@@ -147,6 +160,14 @@ h2{
 
 a{
     text-decoration: none;
+}
+
+.color-noaprobado{
+    color: white;
+}
+
+.color-aprobado{
+    color: black;
 }
 
 .over-y{

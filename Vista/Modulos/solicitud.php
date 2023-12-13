@@ -35,14 +35,6 @@
                         ?>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleDataList" class="form-label">ESTADO</label>
-                    <select class="form-select" aria-label="Default select example" name=estadoA required>
-                        <option value="PENDIENTE">PENDIENTE</option>
-                        <option value="APROBADO">APROBADO</option>
-                        <option value="NO APROBADO">NO APROBADO</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-danger">AGREGAR</button>
             </form>
             <?php
@@ -52,4 +44,41 @@
         </div>
     </div>
 </div>
+
+
+<br><br>
+
+<div class="container">
+    <div class="tablafondo tablaover">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No. DE REPORTE</th>
+                    <th scope="col">ARTICULO</th>
+                    <th scope="col">ENCARGADO</th>
+                    <th scope="col">FECHA DE REGISTRO</th>
+                    <th scope="col">DETALLES</th>
+                    <th scope="col">ESTADO DE SOLICITUD</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $mostrarsolicitudes = new SolicitudC();
+                    // Verificar si se ha enviado el formulario para aprobar
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if (isset($_POST['aprobar'])) {
+                            $mostrarsolicitudes->AprobarSolicitudC();
+                        } elseif (isset($_POST['noaprobar'])) {
+                            $mostrarsolicitudes->NOAprobarSolicitudC();
+                        }
+                    }
+                    $mostrarsolicitudes -> MostrarSolicitudC();
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 </div>
