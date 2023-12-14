@@ -240,6 +240,7 @@
                     <th scope="col">CV</th>
                     <th scope="col">USUARIO</th>
                     <th scope="col">CLAVE</th>
+                    <th scope="col">CREDENCIAL</th>
                     <th scope="col"></th>
                 </tr>
             </thead>

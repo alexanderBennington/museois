@@ -68,6 +68,7 @@
                     <td><a href="Vista/img/empleados/'.$value["cv"].'" target="_blank">'.$value["cv"].'</a></td>
                     <td>'.$value["usuario"].'</td>
                     <td>'.$value["clave"].'</td>
+                    <td><a href="http://localhost/museois/Vista/Modulos/credencialpdf.php?id=' . $value["id"] . '" target="_blank">CREDENCIAL</a></td>
                     <th class="boton">ESCOGER</th>
                 </tr>';
             }
@@ -115,6 +116,37 @@
                     '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
                 </option>';
             }
+        }
+
+        public function CredencialC(){
+            $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+            $nombreImagen = "../img/empleados/" . $id . ".jpg";
+            $empleadofoto = "data:image/jpg;base64," . base64_encode(file_get_contents($nombreImagen));
+            // Contenido del código QR
+            $contenido = $id;
+
+            // Nombre del archivo de salida
+            $qrpng = "qr.png";
+
+            // Tamaño y margen del código QR
+            $tamaño = 10;
+            $margen = 1;
+
+            // Generar el código QR
+            QRcode::png($contenido, $qrpng, QR_ECLEVEL_L, $tamaño, $margen);
+
+            $qr = "data:image/png;base64," . base64_encode(file_get_contents($qrpng));
+
+            $respuesta = EmpleadosM::CredencialM($id);
+            echo 
+                '
+                <div align="center" >
+                    <h2 style="font-size: 20px;">'.$respuesta["tipo"].'</h2>
+                    <img src="'.$empleadofoto.'.jpg" width="150">
+                    <h3 style="font-size: 15px;">'.$respuesta["nombre"].' '.$respuesta["apellido_paterno"].' '.$respuesta["apellido_materno"].'</h3>
+                    <img src="'.$qr.'.jpg" width="100">
+                </div>
+                ';
         }
     }
 ?>

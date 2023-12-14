@@ -99,5 +99,12 @@
             return $pdo -> fetchAll();
             $pdo -> close(); 
         }
+
+        static public function CredencialM($id){
+            $pdo = ConexionBD::cBD() -> prepare("SELECT id, nombre, apellido_paterno, apellido_materno, tipo FROM empleados WHERE id = :id");
+            $pdo -> bindParam(":id", $id, PDO::PARAM_STR);
+            $pdo -> execute();
+            return $pdo -> fetch();
+        }
     }
 ?>
