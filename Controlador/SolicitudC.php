@@ -89,8 +89,8 @@
                         '</th>
                         <th>
                             <form method="POST">
-                                <input type="hidden" name="id" value='.$value["id"].'>
-                                <button type="submit" name="eliminar" class="btn boton">ELIMINAR<br>REPORTE</button>
+                                <input type="hidden" name="idE" value='.$value["id"].'>
+                                <button type="submit" name="eliminar" class="btn boton">ELIMINAR<br>SOLICITUD</button>
                             </form>';
                     echo
                         '</th>
