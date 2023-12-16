@@ -175,3 +175,39 @@ a{
     overflow-y: scroll;
     max-height: 200px;
 }
+
+.cuadrochat{
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 600px;
+    height: 600px;
+    border: 2px solid rgb(16, 2, 49);
+    border-radius: 10px;
+    border-bottom: none; 
+    background-color: rgb(230, 243, 255);
+    color: rgb(8, 8, 31);
+}
+
+.cajachat{
+    width:70%; 
+    margin: 10px 20px 10px 20px; 
+    border-radius:10px;
+}
+
+.cajachat1{
+    background: rgb(216, 216, 216); 
+}
+
+.cajachat2{
+    background: white; 
+    margin-left:auto;
+}
+
+.p1chat{
+    margin:15px 15px 0 15px;
+}
+
+.p2chat{
+    margin:0 15px 15px 15px;
+    font-size: 10px;
+}

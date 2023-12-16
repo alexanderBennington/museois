@@ -17,6 +17,8 @@
     require_once "Modelo/SolicitudM.php";
     require_once "Controlador/ReporteC.php";
     require_once "Modelo/ReporteM.php";
+    require_once "Controlador/ChatC.php";
+    require_once "Modelo/ChatM.php";
     $rutas = new RutasControlador();
     $rutas -> Plantilla();
 ?>

@@ -148,5 +148,23 @@
                 </div>
                 ';
         }
+
+        public function MostrarEmpleadosChatC(){
+            $tablaBD = "empleados";
+            $respuesta = EmpleadosM::MostrarEmpleadosChatM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<tr>
+                    <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
+                    <td>'.$value["tipo"].'</td>
+                    <th class="boton">
+                        <form method="POST">
+                            <input type="hidden" name="id" value='.$value["id"].'>
+                            <button type="submit" name="seleccionarid" class="btn boton">Ir a Chat</button>
+                        </form>
+                    </th>
+                </tr>';
+            }
+        }
     }
 ?>

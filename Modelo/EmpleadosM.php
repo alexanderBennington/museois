@@ -106,5 +106,11 @@
             $pdo -> execute();
             return $pdo -> fetch();
         }
+
+        static public function MostrarEmpleadosChatM($tablaBD){
+            $pdo = ConexionBD::cBD() -> prepare("SELECT id, nombre, apellido_paterno, apellido_materno, tipo FROM empleados ORDER BY nombre ASC");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+        }
     }
 ?>
