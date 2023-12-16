@@ -20,6 +20,24 @@
             }
         }
 
+        static public function EnviarMensajeChatGeneralM($id, $mensaje){
+            try {
+                $pdo = ConexionBD::cBD()->prepare("INSERT INTO mensajes_general (id_usuario, mensaje) VALUES (:id_usuario, :mensaje)");
+                $pdo->bindParam(":id_usuario", $id, PDO::PARAM_STR);
+                $pdo->bindParam(":mensaje", $mensaje, PDO::PARAM_STR);
+                if ($pdo->execute()) {
+                    return "Bien";
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            } finally {
+                // Cerrar la conexión
+                $pdo = null;
+            }
+        }
+
         static public function MostrarChatM($id){
             try {
                 $pdo = ConexionBD::cBD() -> 
@@ -71,6 +89,36 @@
                 ");
                 $pdo->bindParam(":id1", $_SESSION["id"], PDO::PARAM_STR);
                 $pdo->bindParam(":id2", $id, PDO::PARAM_STR);
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
+
+        static public function MostrarChatGeneralM(){
+            try {
+                $pdo = ConexionBD::cBD() -> 
+                prepare("SELECT 
+                e.id, e.nombre, e.apellido_paterno, e.apellido_materno, 
+                e.tipo as area, m.mensaje, m.fecha_envio 
+            FROM 
+                mensajes_general m 
+                JOIN empleados e ON e.id = m.id_usuario
+                
+            UNION
+                
+            SELECT 
+                a.id, a.nombre, a.apellido_paterno, a.apellido_materno, a.area, m.mensaje, m.fecha_envio
+            FROM 
+                mensajes_general m 
+                JOIN administracion a ON a.id = m.id_usuario
+            ORDER BY 
+                fecha_envio ASC
+                ");
                 if ($pdo->execute()) {
                     return $pdo -> fetchAll();
                 } else {

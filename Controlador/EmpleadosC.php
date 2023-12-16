@@ -157,7 +157,7 @@
                 '<tr>
                     <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
                     <td>'.$value["tipo"].'</td>
-                    <th class="boton">
+                    <th>
                         <form method="POST">
                             <input type="hidden" name="id" value='.$value["id"].'>
                             <button type="submit" name="seleccionarid" class="btn boton">Ir a Chat</button>

@@ -25,6 +25,8 @@
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         if (isset($_POST['seleccionarid'])) {
                             $chat->RedirigirChatC();
+                        } elseif(isset($_POST['chatgeneral'])){
+                            $chat->RedirigirChatGeneralC();
                         }
                     }
                     $mostrarempleados -> MostrarEmpleadosChatC();
@@ -32,5 +34,10 @@
             </tbody>
         </table>
     </div>
+    <form method="POST">
+        <div class="d-grid gap-2">
+            <button class="btn btn-danger" type="submit" name=chatgeneral >Ir a Chat General</button>
+        </div>
+    </form>
 </div>
 </div>
