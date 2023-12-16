@@ -44,7 +44,9 @@
         }
     
         private function redirigirAReportesConId($id) {
-            header("Location: indicacionesAdmin.php?ruta=generarreportes&id=" . urlencode($id));
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "indicacionesAdmin.php?ruta=generarreportes&id='.urlencode($id).'";';
+            echo '</script>';
             exit();
         }
 

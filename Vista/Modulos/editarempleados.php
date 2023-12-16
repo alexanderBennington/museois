@@ -74,6 +74,8 @@
                         <option value="INVESTIGADOR">INVESTIGADOR</option>
                         <option value="CATALOGADOR">CATALOGADOR</option>
                         <option value="CONS_REST">CONSERVADOR, RESTAURADOR</option>
+                        <option value="OPERATIVO/TAQ">OPERATIVO, TAQUILLA</option>
+                        <option value="SEGURIDAD">SEGURIDAD</option>
                     </select>
                 </div>
                 <div class="mb-3">
@@ -160,6 +162,8 @@
                         <option value="INVESTIGADOR">INVESTIGADOR</option>
                         <option value="CATALOGADOR">CATALOGADOR</option>
                         <option value="CONS_REST">CONSERVADOR, RESTAURADOR</option>
+                        <option value="OPERATIVO/TAQ">OPERATIVO, TAQUILLA</option>
+                        <option value="SEGURIDAD">SEGURIDAD</option>
                     </select>
                 </div>
                 <div class="mb-3">
