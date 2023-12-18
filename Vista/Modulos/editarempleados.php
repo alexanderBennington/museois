@@ -83,6 +83,10 @@
                     <input class="form-control" type="file" id="formFile" name=cvempA required>
                 </div>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">NUMERO TEL</label>
+                    <input class="form-control" aria-describedby="emailHelp" name=telempA required>
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">USUARIO</label>
                     <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name=usuarioempA required>
                 </div>
@@ -171,12 +175,16 @@
                     <input class="form-control" type="file" id="formFile" name=cvempE required>
                 </div>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">NUMERO TEL</label>
+                    <input class="form-control" id="e8" aria-describedby="emailHelp" name=telempE required>
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">USUARIO</label>
-                    <input class="form-control" id="e8" aria-describedby="emailHelp" name=usuarioempE required>
+                    <input class="form-control" id="e9" aria-describedby="emailHelp" name=usuarioempE required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">CLAVE</label>
-                    <input type="password" class="form-control" id="e9" aria-describedby="emailHelp" name=claveempE required>
+                    <input type="password" class="form-control" id="e10" aria-describedby="emailHelp" name=claveempE required>
                 </div>
                 <button type="submit" class="btn btn-danger">EDITAR</button>
             </form>
@@ -197,19 +205,19 @@
             <form method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">ID</label>
-                    <input class="form-control" id="e10" aria-describedby="emailHelp" name=idempEL readonly>
+                    <input class="form-control" id="e11" aria-describedby="emailHelp" name=idempEL readonly>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">NOMBRE(S)</label>
-                    <input class="form-control" id="e11" aria-describedby="emailHelp" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">APELLIDO PATERNO</label>
                     <input class="form-control" id="e12" aria-describedby="emailHelp" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">APELLIDO MATERNO</label>
+                    <label for="exampleInputEmail1" class="form-label">APELLIDO PATERNO</label>
                     <input class="form-control" id="e13" aria-describedby="emailHelp" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">APELLIDO MATERNO</label>
+                    <input class="form-control" id="e14" aria-describedby="emailHelp" readonly>
                 </div>
                 <button type="submit" class="btn btn-danger">ELIMINAR</button>
             </form>
@@ -234,7 +242,8 @@
                     <th scope="col">NOMBRE(S)</th>
                     <th scope="col">APELLIDO PATERNO</th>
                     <th scope="col">APELLIDO MATERNO</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col">TELEFONO</th>
+                    <th scope="col">FECHA</th>
                     <th scope="col">RFC</th>
                     <th scope="col">CURP</th>
                     <th scope="col">NSS</th>

@@ -7,7 +7,7 @@
                 //$texto_sin_espacios_inicio_final = trim($nomreempA);
                 $datosC = array("id" => $_POST["idempA"],  "nombre" => $_POST["nombreempA"], "apellidop" => $_POST["appempA"], "apellidom" => $_POST["apmempA"],
                     "fecha" => $_POST["fechaempA"], "rfc" => $_POST["rfcempA"], "curp" => $_POST["curpempA"], "nss" => $_POST["nssempA"], 
-                    "escolaridad" => $_POST["escolaridadempA"], "zona" => $_POST["zonaempA"], "cv" => $_POST["cvempA"], "tipo" => $_POST["tipoempA"], 
+                    "escolaridad" => $_POST["escolaridadempA"], "zona" => $_POST["zonaempA"], "cv" => $_POST["cvempA"], "telefono" => $_POST["telempA"], "tipo" => $_POST["tipoempA"], 
                     "usuario" => $_POST["usuarioempA"], "clave" => $_POST["claveempA"]);
                 $tablaBD = "empleados";
                 $respuesta = EmpleadosM::NuevoEmpleadoM($datosC, $tablaBD); 
@@ -23,7 +23,7 @@
             if(isset($_POST["idempE"])){
                 $datosC = array("id" => $_POST["idempE"],  "nombre" => $_POST["nombreempE"], "apellidop" => $_POST["appempE"], "apellidom" => $_POST["apmempE"],
                     "fecha" => $_POST["fechaempE"], "rfc" => $_POST["rfcempE"], "curp" => $_POST["curpempE"], "nss" => $_POST["nssempE"], 
-                    "escolaridad" => $_POST["escolaridadempE"], "zona" => $_POST["zonaempE"], "cv" => $_POST["cvempE"], "tipo" => $_POST["tipoempE"], 
+                    "escolaridad" => $_POST["escolaridadempE"], "zona" => $_POST["zonaempE"], "cv" => $_POST["cvempE"], "telefono" => $_POST["telempE"], "tipo" => $_POST["tipoempE"], 
                     "usuario" => $_POST["usuarioempE"], "clave" => $_POST["claveempE"]);
                 $tablaBD = "empleados";
                 $respuesta = EmpleadosM::EditarEmpleadoM($datosC, $tablaBD); 
@@ -58,6 +58,7 @@
                     <td>'.$value["nombre"].'</td>
                     <td>'.$value["apellido_paterno"].'</td>
                     <td>'.$value["apellido_materno"].'</td>
+                    <td>'.$value["telefono"].'</td>
                     <td>'.$value["fecha_ingreso"].'</td>
                     <td>'.$value["rfc"].'</td>
                     <td>'.$value["curp"].'</td>

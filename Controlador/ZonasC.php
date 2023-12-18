@@ -71,5 +71,19 @@
                 '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
             }
         }
+
+        public function MostrarZonasPublicoC(){
+            $respuesta = ZonasM::MostrarZonasPublicoM();
+            foreach($respuesta as $key => $value){
+            echo 
+                '
+                <tr>
+                    <th scope="row">'.$value["nombre"].'</th>
+                    <td>'.$value["estado"].'</td>
+                    <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
+                </tr>
+                ';
+            }
+        }
     }
 ?>

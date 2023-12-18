@@ -61,5 +61,29 @@
             return $pdo -> fetchAll();
             $pdo -> close(); 
         }
+
+        static public function MostrarVisitasPublicoM(){
+            try {
+                $pdo = ConexionBD::cBD() ->
+                prepare("SELECT 
+                v.grupo,  DATE_FORMAT(v.fecha_visita, '%d-%m-%Y') AS fecha, v.hora_entrada, v.hora_salida, 
+                e1.nombre as nombreguia, e1.apellido_paterno as appguia, e1.apellido_materno as apmguia,
+                e2.nombre as nombrem, e2.apellido_paterno as appm, e2.apellido_materno as apmm 
+            FROM
+                visitas v JOIN empleados e1 ON v.id_guia = e1.id 
+                JOIN empleados e2 ON v.id_monitor = e2.id
+            WHERE 
+                estado = 'PENDIENTE' 
+            ORDER BY 
+                fecha ASC");
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
     }
 ?>

@@ -15,7 +15,9 @@
         }
 
         static public function RutasModeloPublico($rutas){
-            if($rutas == "principal"){
+            if($rutas == "principal" || $rutas == "historia" || $rutas == "investigacion" || $rutas == "grupos" || $rutas == "salas"
+                || $rutas == "horarios" || $rutas == "boletos" || $rutas == "historia" || $rutas == "tienda" || $rutas == "seguridad" 
+                || $rutas == "plano" || $rutas == "ubicacion" || $rutas == "directorio"){
                 $pagina = "Vista/ModulosPrincipal/".$rutas.".php";
             }else if($rutas == "index"){
                 $pagina = "Vista/ModulosPrincipal/principal.php";

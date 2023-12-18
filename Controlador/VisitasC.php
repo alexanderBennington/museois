@@ -60,5 +60,22 @@
                 </tr>';
             }
         }
+
+        public function MostrarVisitasPublicoC(){
+            $respuesta = VisitasM::MostrarVisitasPublicoM();
+            foreach($respuesta as $key => $value){
+            echo 
+                '
+                <tr>
+                    <th scope="row">'.$value["grupo"].'</th>
+                    <td>'.$value["fecha"].'</td>
+                    <td>'.$value["hora_entrada"].'</td>
+                    <td>'.$value["hora_salida"].'</td>
+                    <td>'.$value["nombreguia"].' '.$value["appguia"].' '.$value["apmguia"].'</td>
+                    <td>'.$value["nombrem"].' '.$value["appm"].' '.$value["apmm"].'</td>
+                </tr>
+                ';
+            }
+        }
     }
 ?>

@@ -3,8 +3,8 @@
     class EmpleadosM extends ConexionBD{
         static public function NuevoEmpleadoM($datosC, $tablaBD){
             $pdo = ConexionBD::cBD() -> prepare("INSERT INTO $tablaBD (id, nombre, apellido_paterno, apellido_materno, fecha_ingreso, rfc, curp, nss, 
-                escolaridad, id_zona, cv, tipo, usuario, clave) VALUES (:id, :nombre, :apellido_paterno, :apellido_materno, :fecha_ingreso, :rfc, :curp, :nss, 
-                :escolaridad, :id_zona, :cv, :tipo, :usuario, :clave)");
+                escolaridad, id_zona, cv, tipo, usuario, clave, telefono) VALUES (:id, :nombre, :apellido_paterno, :apellido_materno, :fecha_ingreso, :rfc, :curp, :nss, 
+                :escolaridad, :id_zona, :cv, :tipo, :usuario, :clave, :telefono)");
             $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);
             $pdo -> bindParam(":nombre", $datosC["nombre"], PDO::PARAM_STR);
             $pdo -> bindParam(":apellido_paterno", $datosC["apellidop"], PDO::PARAM_STR);
@@ -19,6 +19,7 @@
             $pdo -> bindParam(":tipo", $datosC["tipo"], PDO::PARAM_STR);
             $pdo -> bindParam(":usuario", $datosC["usuario"], PDO::PARAM_STR);
             $pdo -> bindParam(":clave", $datosC["clave"], PDO::PARAM_STR);
+            $pdo -> bindParam(":telefono", $datosC["telefono"], PDO::PARAM_INT);
             if($pdo -> execute()){
                 return "Bien";
             }else{
@@ -30,7 +31,7 @@
         static public function EditarEmpleadoM($datosC, $tablaBD){
             $pdo = ConexionBD::cBD() -> prepare("UPDATE $tablaBD SET id = :id, nombre = :nombre, apellido_paterno = :apellido_paterno, apellido_materno = :apellido_materno, 
                 fecha_ingreso = :fecha_ingreso, rfc = :rfc, curp = :curp, nss = :nss, escolaridad = :escolaridad, id_zona = :id_zona, cv = :cv, tipo = :tipo,
-                usuario = :usuario, clave = :clave WHERE id = :id");
+                usuario = :usuario, clave = :clave, telefono = :telefono WHERE id = :id");
             $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);
             $pdo -> bindParam(":nombre", $datosC["nombre"], PDO::PARAM_STR);
             $pdo -> bindParam(":apellido_paterno", $datosC["apellidop"], PDO::PARAM_STR);
@@ -45,6 +46,7 @@
             $pdo -> bindParam(":tipo", $datosC["tipo"], PDO::PARAM_STR);
             $pdo -> bindParam(":usuario", $datosC["usuario"], PDO::PARAM_STR);
             $pdo -> bindParam(":clave", $datosC["clave"], PDO::PARAM_STR);
+            $pdo -> bindParam(":telefono", $datosC["telefono"], PDO::PARAM_INT);
             if($pdo -> execute()){
                 return "Bien";
             }else{
@@ -66,7 +68,7 @@
 
         static public function MostrarEmpleadosM($tablaBD){
             $pdo = ConexionBD::cBD() -> prepare("SELECT e.id, e.nombre, e.apellido_paterno, e.apellido_materno, e.fecha_ingreso, e.rfc, e.curp, e.nss, 
-                e.escolaridad, z.nombre as area, e.cv, e.tipo, e.usuario, e.clave FROM $tablaBD e JOIN zona_museo z ON e.id_zona = z.id ORDER BY z.id DESC");
+                e.escolaridad, z.nombre as area, e.cv, e.tipo, e.usuario, e.clave, e.telefono FROM $tablaBD e JOIN zona_museo z ON e.id_zona = z.id ORDER BY e.tipo DESC");
             $pdo -> execute();
             return $pdo -> fetchAll();
             $pdo -> close(); 
