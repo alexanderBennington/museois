@@ -17,6 +17,7 @@
                     <th scope="col">ARTICULO</th>
                     <th scope="col">ENCARGADO</th>
                     <th scope="col">FECHA DE REGISTRO</th>
+                    <th scope="col">TIPO</th>
                     <th scope="col">DETALLES</th>
                     <th scope="col"></th>
                     <th scope="col"></th>

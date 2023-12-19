@@ -2,7 +2,8 @@
     class SolicitudC{
         public function NuevoSolicitudC(){
             if(isset($_POST["coleccionA"])){
-                $datosC = array("id_articulo" => $_POST["coleccionA"],  "detalles" => $_POST["detallesA"], "estado" => "PENDIENTE", "id_encargado" => $_POST["encargadoA"]);
+                $datosC = array("id_articulo" => $_POST["coleccionA"],  "detalles" => $_POST["detallesA"], "estado" => "PENDIENTE", "id_encargado" => $_POST["encargadoA"],
+                "tipo" => $_POST["tipoA"],);
                 $tablaBD = "solicitud";
                 $respuesta = SolicitudM::NuevoSolicitudM($datosC, $tablaBD); 
                 if($respuesta == "Bien"){
@@ -23,6 +24,7 @@
                         <td>'.$value["nombre_obra"].'</td>
                         <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
                         <td>'.$value["fecha"].'</td>
+                        <td>'.$value["tipo"].'</td>
                         <td>'.$value["detalles"].'</td>
                         <td>'.$value["estado"].'</td>
                         <th>
@@ -79,6 +81,7 @@
                         <td>'.$value["nombre_obra"].'</td>
                         <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
                         <td>'.$value["fecha"].'</td>
+                        <td>'.$value["tipo"].'</td>
                         <td>'.$value["detalles"].'</td>
                         <th>
                             <form method="POST">
@@ -111,6 +114,10 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">ENCARGADO</label>
                     <input class="form-control" aria-describedby="emailHelp" value="'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TIPO</label>
+                    <input class="form-control" aria-describedby="emailHelp" value="'.$value["tipo"].'" readonly>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">ARTICULO</label>

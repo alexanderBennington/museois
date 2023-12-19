@@ -35,6 +35,17 @@
                         ?>
                     </select>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">TIPO DE PROBLEMA</label>
+                    <select class="form-select" aria-label="Default select example" name=tipoA required>
+                        <option value="INCIDENTE">INCIDENTE</option>
+                        <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+                        <option value="DESVANECIMIENTO">DESVANECIMIENTO DE COLOR</option>
+                        <option value="RAJADURA">RAJADURA</option>
+                        <option value="HUMEDAD">HUMEDAD</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-danger">AGREGAR</button>
             </form>
             <?php
@@ -57,6 +68,7 @@
                     <th scope="col">ARTICULO</th>
                     <th scope="col">ENCARGADO</th>
                     <th scope="col">FECHA DE REGISTRO</th>
+                    <th scope="col">TIPO</th>
                     <th scope="col">DETALLES</th>
                     <th scope="col">ESTADO DE SOLICITUD</th>
                     <th scope="col"></th>
