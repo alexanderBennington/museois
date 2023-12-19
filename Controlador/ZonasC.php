@@ -85,5 +85,24 @@
                 ';
             }
         }
+
+        public function MostrarZonasVisitasC(){
+            $tablaBD = "zona_museo";
+            $respuesta = ZonasM::MostrarZonasM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+            }
+        }
+
+        public function iraseleleccionarZonasC(){
+            if(isset($_POST["seleccionarzonas"]) && isset($_POST["idv"])){
+                $id = filter_var(trim($_POST["idv"]), FILTER_SANITIZE_STRING);
+                echo '<script type="text/javascript">';
+                echo 'window.location.href = "indicacionesAdmin.php?ruta=seleccionarzonas&id='. urlencode($id).'"';
+                echo '</script>';
+            }
+        }
+        
     }
 ?>

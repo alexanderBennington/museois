@@ -56,25 +56,70 @@
                     <td>'.$value["estado"].'</td>
                     <td>'.$value["id_emp1"].' '.$value["nombre1"].' '.$value["app1"].' '.$value["apm1"].'</td>
                     <td>'.$value["id_emp2"].' '.$value["nombre2"].' '.$value["app2"].' '.$value["apm2"].'</td>
+                    <th>
+                        <form method="POST">
+                            <input type="hidden" name="idv" value='.$value["id"].'>
+                            <button type="submit" name="seleccionarzonas" class="btn boton">Añadir<br>Zonas</button>
+                        </form>
+                    </th>
                     <th class="boton">ESCOGER</th>
                 </tr>';
             }
         }
-
-        public function MostrarVisitasPublicoC(){
-            $respuesta = VisitasM::MostrarVisitasPublicoM();
+    
+        public function MostrarDetallesVisitaC(){
+            $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+            $respuesta = VisitasM::MostrarDetallesVisitaM($id);
             foreach($respuesta as $key => $value){
             echo 
-                '
-                <tr>
-                    <th scope="row">'.$value["grupo"].'</th>
-                    <td>'.$value["fecha"].'</td>
-                    <td>'.$value["hora_entrada"].'</td>
-                    <td>'.$value["hora_salida"].'</td>
-                    <td>'.$value["nombreguia"].' '.$value["appguia"].' '.$value["apmguia"].'</td>
-                    <td>'.$value["nombrem"].' '.$value["appm"].' '.$value["apmm"].'</td>
-                </tr>
+                '<div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ID DE VISITA</label>
+                    <input class="form-control" aria-describedby="emailHelp" value="'.$value["id"].'" name=id readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">GRUPO</label>
+                    <input class="form-control" aria-describedby="emailHelp" value="'.$value["grupo"].'" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ENTRADA</label>
+                    <input class="form-control" aria-describedby="emailHelp" value="'.$value["hora_entrada"].'" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">SALIDA</label>
+                    <input class="form-control" aria-describedby="emailHelp" value="'.$value["hora_salida"].'" readonly>
+                </div>
                 ';
+            }
+        }
+
+        public function registrarzonasVisitaC(){
+            if(isset($_POST["registrar"])){
+                $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+                $zonas = $_POST["zona"];
+                foreach ($zonas as $indice => $zona) {
+                    $zona = filter_var(trim($zona), FILTER_SANITIZE_STRING);
+        
+                    if (!empty($zona)) {
+                        $respuesta = VisitasM::registrarzonasVisitaM($id, $zona);
+                        if($respuesta !== "Bien"){
+                            header("location: indicacionesAdmin.php?ruta=ErrorSQLAdmin&error=" . urlencode($respuesta));
+                            exit();
+                        }
+                    }
+                }
+                echo "<script>window.location.href = window.location.href;</script>";
+                exit();
+            }
+        }
+
+        public function mostrarVisitaZonasC(){
+            $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+            $respuesta = VisitasM::mostrarVisitaZonasM($id);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<tr>
+                    <td>'.$value["nombre"].'</td>
+                </tr>';
             }
         }
     }

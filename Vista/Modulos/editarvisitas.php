@@ -164,11 +164,19 @@
                     <th scope="col">ESTADO</th>
                     <th scope="col">GUIA</th>
                     <th scope="col">MONITOR</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     $mostrarvisita = new VisitasC();
+                    $zonas = new ZonasC();
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if (isset($_POST['seleccionarzonas'])) {
+                            $zonas->iraseleleccionarZonasC();
+                        }
+                    }
                     $mostrarvisita -> MostrarVisitasC();
                 ?>
             </tbody>

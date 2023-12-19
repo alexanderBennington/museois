@@ -2,6 +2,73 @@
 
     <h2>HORARIOS</h2>
 
+    <h1>Agenda Semanal</h1>
+    <table>
+        <tr>
+            <th>Día</th>
+            <th>Eventos</th>
+        </tr>
+        <?php
+        // Obtén la fecha de inicio y fin de la semana actual
+        $today = new DateTime();
+        $start_of_week = $today->modify('this week')->format('Y-m-d');
+        $end_of_week = $today->modify('this week +6 days')->format('Y-m-d');
+
+        // Itera sobre los días de la semana
+        $current_date = new DateTime($start_of_week);
+        while ($current_date <= new DateTime($end_of_week)) {
+            $formatted_date = $current_date->format('d-m-Y');
+            echo "<tr>";
+            echo "<td>$formatted_date</td>";
+            echo "<td>";
+            // Muestra los eventos para el día actual
+            if (isset($eventos[$formatted_date])) {
+                echo implode(', ', $eventos[$formatted_date]);
+            } else {
+                echo "Sin eventos";
+            }
+            echo "</td>";
+            echo "</tr>";
+            $current_date->modify('+1 day');
+        }
+        ?>
+    </table>
+
+    <div class="container">
+    <div class="tablafondo tablaover">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE(S)</th>
+                    <th scope="col">APELLIDO PATERNO</th>
+                    <th scope="col">APELLIDO MATERNO</th>
+                    <th scope="col">TELEFONO</th>
+                    <th scope="col">FECHA</th>
+                    <th scope="col">RFC</th>
+                    <th scope="col">CURP</th>
+                    <th scope="col">NSS</th>
+                    <th scope="col">ESCOLARIDAD</th>
+                    <th scope="col">ZONA</th>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">CV</th>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">CLAVE</th>
+                    <th scope="col">CREDENCIAL</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $mostrarempleados = new EmpleadosC();
+                    $mostrarempleados -> MostrarEmpleadosC();
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
     <h3>¡Guarda tus preocupaciones y tus abrigos! Nuestro Guardarropa te espera.</h3>
     <p>
         En el fascinante viaje a través de las maravillas de Museum, 

@@ -85,5 +85,60 @@
                 return "Error en la conexión a la base de datos: " . $e->getMessage();
             }
         }
+
+        static public function MostrarDetallesVisitaM($id){
+            try {
+                $pdo = ConexionBD::cBD() ->
+                prepare("SELECT * from Visitas WHERE id=:id");
+                $pdo -> bindParam(":id", $id, PDO::PARAM_INT);
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
+
+        static public function registrarzonasVisitaM($id, $zona){
+            try {
+                $pdo = ConexionBD::cBD() -> prepare("INSERT INTO visitas_zonas (id_visita, zona) VALUES 
+                (:id_visita, :zona)");
+                $pdo->bindParam(":id_visita", $id, PDO::PARAM_INT);
+                $pdo->bindParam(":zona", $zona, PDO::PARAM_STR);
+                if ($pdo->execute()) {
+                    return "Bien";
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
+
+        static public function mostrarVisitaZonasM($id){
+            try {
+                $pdo = ConexionBD::cBD() -> 
+                prepare("SELECT 
+                    z.nombre 
+                FROM 
+                    zona_museo z 
+                    JOIN visitas_zonas vz ON z.id = vz.zona 
+                WHERE 
+                    id_visita = :id_visita
+                ORDER BY
+                    z.nombre
+                ");
+                $pdo->bindParam(":id_visita", $id, PDO::PARAM_INT);
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
     }
 ?>

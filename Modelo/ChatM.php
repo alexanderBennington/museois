@@ -14,9 +14,6 @@
                 }
             } catch (PDOException $e) {
                 return "Error en la conexión a la base de datos: " . $e->getMessage();
-            } finally {
-                // Cerrar la conexión
-                $pdo = null;
             }
         }
 
@@ -32,9 +29,6 @@
                 }
             } catch (PDOException $e) {
                 return "Error en la conexión a la base de datos: " . $e->getMessage();
-            } finally {
-                // Cerrar la conexión
-                $pdo = null;
             }
         }
 
