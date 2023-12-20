@@ -66,6 +66,21 @@
                 </tr>';
             }
         }
+
+        public function MostrarVisitasPublicoC(){
+            $respuesta = VisitasM::MostrarVisitasPublicoM();
+            foreach($respuesta as $key => $value){
+            echo 
+                '<tr>
+                    <td>'.$value["grupo"].'</td>
+                    <td>'.$value["fecha"].'</td>
+                    <td>'.$value["hora_entrada"].'</td>
+                    <td>'.$value["hora_salida"].'</td>
+                    <td>'.$value["nombreguia"].' '.$value["appguia"].' '.$value["apmguia"].'</td>
+                    <td>'.$value["nombrem"].' '.$value["appm"].' '.$value["apmm"].'</td>
+                </tr>';
+            }
+        }
     
         public function MostrarDetallesVisitaC(){
             $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
@@ -120,6 +135,37 @@
                 '<tr>
                     <td>'.$value["nombre"].'</td>
                 </tr>';
+            }
+        }
+
+        public function mostrarAgendaSemanalVisitasC(){
+            $respuesta = VisitasM::mostrarAgendaSemanalVisitasM();
+            // Obtén la fecha de inicio y fin de la semana actual
+            $today = new DateTime();
+            $start_of_week = $today->modify('this week')->format('Y-m-d');
+            $end_of_week = $today->modify('this week +6 days')->format('Y-m-d');
+
+            // Itera sobre los días de la semana
+            $current_date = new DateTime($start_of_week);
+            
+            while ($current_date <= new DateTime($end_of_week)) {
+                $formatted_date = $current_date->format('Y-m-d');
+                echo "<tr>";
+                echo "<td>$formatted_date</td>";
+                // Muestra los eventos para el día actual
+                foreach($respuesta as $key => $value){
+                if ($formatted_date == $value["fecha_visita"]){
+                    echo'<td>'.$value["grupo"].'</td>';
+                    echo'<td>'.$value["hora_entrada"].'</td>';
+                    echo'<td>'.$value["hora_salida"].'</td>';
+                    echo'<td>'.$value["zonas"].'</td>';
+                }else{
+                    echo'<td colspan="4">SIN EVENTOS</td>';
+
+                }}
+                echo "</tr>";
+                $current_date->modify('+1 day');
+            
             }
         }
     }

@@ -78,7 +78,7 @@
             echo 
                 '
                 <tr>
-                    <th scope="row">'.$value["nombre"].'</th>
+                    <th scope="row">'.$value["nombre_zona"].'</th>
                     <td>'.$value["estado"].'</td>
                     <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
                 </tr>

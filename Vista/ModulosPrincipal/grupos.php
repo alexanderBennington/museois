@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 align=center>SALAS</h2>
+    <h2 align=center>GRUPOS</h2>
     <table class="table table-borderless table-dark">
         <thead>
             <tr>

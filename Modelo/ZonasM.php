@@ -62,7 +62,7 @@
             try {
                 $pdo = ConexionBD::cBD() ->
                 prepare("SELECT
-                z.nombre, z.estado, a.nombre, a.apellido_paterno, a.apellido_materno 
+                z.nombre AS nombre_zona, z.estado, a.nombre, a.apellido_paterno, a.apellido_materno 
             FROM 
                 zona_museo z 
                 JOIN administracion a ON z.id_administracion = a.id 

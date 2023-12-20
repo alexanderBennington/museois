@@ -140,5 +140,35 @@
                 return "Error en la conexión a la base de datos: " . $e->getMessage();
             }
         }
+
+        static public function mostrarAgendaSemanalVisitasM(){
+            try {
+                $pdo = ConexionBD::cBD() -> 
+                prepare("SELECT
+                v.grupo,
+                v.fecha_visita,
+                v.hora_entrada,
+                v.hora_salida,
+                GROUP_CONCAT(z.nombre) AS zonas
+            FROM
+                visitas v
+            JOIN
+                visitas_zonas vz ON v.id = vz.id_visita
+            JOIN
+                zona_museo z ON vz.zona = z.id
+            GROUP BY
+                v.id, v.grupo, v.fecha_visita, v.hora_entrada, v.hora_salida
+            ORDER BY
+                fecha_visita AND hora_entrada
+                ");
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
     }
 ?>

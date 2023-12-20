@@ -45,6 +45,9 @@
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=seleccionarchat">Mensajes</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=editaraseo">Intendencia</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=salir">Cerrar Sesión</a>
                     </li>
                 </ul>

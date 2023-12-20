@@ -167,5 +167,14 @@
                 </tr>';
             }
         }
+
+        public function mostrarEmpleadosAseoC(){
+            $respuesta = EmpleadosM::mostrarEmpleadosAseoM();
+            foreach($respuesta as $key => $value){
+            echo'<option value="'.$value["id"].'">
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'
+                </option>';;
+            }
+        }
     }
 ?>
