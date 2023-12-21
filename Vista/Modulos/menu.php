@@ -48,6 +48,9 @@
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=editaraseo">Intendencia</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=editarequipos">Equipos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=salir">Cerrar Sesión</a>
                     </li>
                 </ul>
