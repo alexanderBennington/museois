@@ -138,34 +138,63 @@
             }
         }
 
+        public function mostrarAgendaSemanalC(){
+            $dias_semana = array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado');
+            
+            $today = new DateTime();
+            $start_of_week = $today->modify('this week')->format('Y-m-d');
+            $end_of_week = $today->modify('this week +6 days')->format('Y-m-d');
+            
+            $current_date = new DateTime($start_of_week);
+            while ($current_date <= new DateTime($end_of_week)) {
+                $formatted_date = $current_date->format('d-m-Y');
+                $day_of_week = $dias_semana[$current_date->format('w')];
+                echo "<tr>";
+                echo "<td>$day_of_week</td>";
+                echo "<td>$formatted_date</td>";
+                
+                if ($current_date->format('w') == 1) {
+                    echo "<td>Cerrado</td>";
+                } else {
+                    echo "<td>10:00 a.m. - 5:00 p.m.</td>";
+                }
+                
+                echo "</tr>";
+                $current_date->modify('+1 day');
+            }
+        }
+        
+
         public function mostrarAgendaSemanalVisitasC(){
             $respuesta = VisitasM::mostrarAgendaSemanalVisitasM();
-            // Obtén la fecha de inicio y fin de la semana actual
+            
             $today = new DateTime();
             $start_of_week = $today->modify('this week')->format('Y-m-d');
             $end_of_week = $today->modify('this week +6 days')->format('Y-m-d');
 
-            // Itera sobre los días de la semana
             $current_date = new DateTime($start_of_week);
-            
             while ($current_date <= new DateTime($end_of_week)) {
                 $formatted_date = $current_date->format('Y-m-d');
                 echo "<tr>";
                 echo "<td>$formatted_date</td>";
-                // Muestra los eventos para el día actual
-                foreach($respuesta as $key => $value){
-                if ($formatted_date == $value["fecha_visita"]){
-                    echo'<td>'.$value["grupo"].'</td>';
-                    echo'<td>'.$value["hora_entrada"].'</td>';
-                    echo'<td>'.$value["hora_salida"].'</td>';
-                    echo'<td>'.$value["zonas"].'</td>';
-                }else{
-                    echo'<td colspan="4">SIN EVENTOS</td>';
 
-                }}
+                $event_found = false;
+                
+                foreach ($respuesta as $value) {
+                    if ($formatted_date == $value["fecha_visita"]) {
+                        echo'<td>'.$value["grupo"].'</td>';
+                        echo'<td>'.$value["hora_entrada"].'</td>';
+                        echo'<td>'.$value["hora_salida"].'</td>';
+                        echo'<td>'.$value["zonas"].'</td>';
+                        $event_found = true;
+                        break;
+                    }
+                }
+                if (!$event_found) {
+                    echo'<td colspan="4">SIN EVENTOS</td>';
+                }
                 echo "</tr>";
                 $current_date->modify('+1 day');
-            
             }
         }
     }

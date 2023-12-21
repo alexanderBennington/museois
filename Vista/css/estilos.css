@@ -224,3 +224,8 @@ h2{
 .margenredes img{
     margin-right: 30px;
 }
+
+.display-flex-center{
+    display: flex;
+    text-align: center;
+}

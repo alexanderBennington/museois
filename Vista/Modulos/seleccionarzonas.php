@@ -1,12 +1,3 @@
-<?php
-	session_start();
-	if(!$_SESSION["ingreso"]){
-		header("location:index.php");
-		exit();
-	}
-?>
-
-
 <div class="fondosesion">
 <div class="container">
     <h2 align=center>SELECCIÓN DE ZONAS</h2>

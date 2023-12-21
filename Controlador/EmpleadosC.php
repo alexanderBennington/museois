@@ -176,5 +176,14 @@
                 </option>';;
             }
         }
+
+        public function mostrarselectEmpleadosC(){
+            $respuesta = EmpleadosM::mostrarselectEmpleadosM();
+            foreach($respuesta as $key => $value){
+            echo'<option value="'.$value["id"].'">
+                    '.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["tipo"].'
+                </option>';;
+            }
+        }
     }
 ?>

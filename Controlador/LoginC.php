@@ -17,9 +17,13 @@
                         $_SESSION["apellido_paterno"] = $respuesta["apellido_paterno"];
                         $_SESSION["apellido_materno"] = $respuesta["apellido_materno"];
                         $_SESSION["area"] = $respuesta["area"];
-                        header("location:indicacionesAdmin.php?ruta=inicioadmin");
-                    }else{
-                        header("location:sesionadminerror.php");
+                        //header("location:indicacionesAdmin.php?ruta=inicioadmin");
+                        echo '<script type="text/javascript">';
+                        echo 'window.location.href = "indicacionesAdmin.php?ruta=inicioadmin"';
+                        echo '</script>';
+                    } else {
+                        header("location: indicacionesAdmin.php?ruta=ErrorSQLAdmin&error=" . urlencode($respuesta));
+                        exit();
                     }
                 }
             }

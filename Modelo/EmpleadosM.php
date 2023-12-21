@@ -127,5 +127,18 @@
                 return "Error en la conexión a la base de datos: " . $e->getMessage();
             }
         }
+
+        static public function mostrarselectEmpleadosM(){
+            try {
+                $pdo = ConexionBD::cBD()->prepare("SELECT id, nombre, apellido_paterno, apellido_materno, tipo FROM empleados ORDER BY tipo ASC");
+                if ($pdo->execute()) {
+                    return $pdo -> fetchAll();
+                } else {
+                    return "Error al ejecutar la consulta";
+                }
+            } catch (PDOException $e) {
+                return "Error en la conexión a la base de datos: " . $e->getMessage();
+            }
+        }
     }
 ?>

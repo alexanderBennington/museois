@@ -5,7 +5,8 @@
                 || $rutas == "editarzonas" || $rutas == "editarcoleccion" || $rutas == "editarvisitas" ||  $rutas == "solicitud" 
                 || $rutas == "reportes" || $rutas == "generarreportes" || $rutas == "seleccionarchat" || $rutas == "chat"
                 || $rutas == "chatgeneral" || $rutas == "seleccionarzonas" || $rutas == "editaraseo" 
-                || $rutas == "editarequipos" || $rutas == "ErrorSQLAdmin" || $rutas == "salir"){
+                || $rutas == "editarequipos" || $rutas == "actividades" || $rutas == "ErrorSQLAdmin"
+                || $rutas == "seguridad" || $rutas == "incidentes" ||  $rutas == "salir"){
                 $pagina = "Vista/Modulos/".$rutas.".php";
             }else if($rutas == "indicacionesAdmin"){
                 $pagina = "Vista/Modulos/inicioadmin.php";

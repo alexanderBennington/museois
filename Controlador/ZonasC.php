@@ -104,5 +104,16 @@
             }
         }
         
+        public function MostrarZonasMapaC(){
+            $tablaBD = "zona_museo";
+            $respuesta = ZonasM::MostrarZonasM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<tr>
+                    <td>'.$value["id"].'</td>
+                    <td>'.$value["nombre"].'</td>
+                </tr>';
+            }
+        }
     }
 ?>

@@ -2,6 +2,24 @@
 
     <h2>HORARIOS</h2>
 
+    <div class="container">
+    <div class="tablafondo tablaover">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">DÍA</th>
+                    <th scope="col">HORA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $agenda = new VisitasC();
+                    $agenda -> mostrarAgendaSemanalC();
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
     <h3>Agenda Semanal</h3>
 
     <div class="container">
@@ -18,7 +36,6 @@
             </thead>
             <tbody>
                 <?php
-                    $agenda = new VisitasC();
                     $agenda -> mostrarAgendaSemanalVisitasC();
                 ?>
             </tbody>

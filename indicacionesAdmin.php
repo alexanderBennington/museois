@@ -23,6 +23,8 @@
     require_once "Modelo/AseoM.php";
     require_once "Controlador/EquiposC.php";
     require_once "Modelo/EquiposM.php";
+    require_once "Controlador/ActividadesC.php";
+    require_once "Modelo/ActividadesM.php";
     $rutas = new RutasControlador();
     $rutas -> Plantilla();
 ?>
