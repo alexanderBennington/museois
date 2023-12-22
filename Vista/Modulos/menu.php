@@ -54,6 +54,12 @@
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=actividades">Actividades</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=seguridad">Seguridad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indicacionesAdmin.php?ruta=incidentes">Incidentes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="indicacionesAdmin.php?ruta=salir">Cerrar Sesión</a>
                     </li>
                 </ul>

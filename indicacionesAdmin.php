@@ -25,6 +25,10 @@
     require_once "Modelo/EquiposM.php";
     require_once "Controlador/ActividadesC.php";
     require_once "Modelo/ActividadesM.php";
+    require_once "Controlador/IncidentesC.php";
+    require_once "Modelo/IncidentesM.php";
+    //require_once "Controlador/SeguridadC.php";
+    //require_once "Modelo/SeguridadM.php";
     $rutas = new RutasControlador();
     $rutas -> Plantilla();
 ?>

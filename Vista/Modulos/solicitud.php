@@ -30,7 +30,6 @@
                 <div class="mb-3">
                     <label class="form-label">TIPO DE PROBLEMA</label>
                     <select class="form-select" aria-label="Default select example" name=tipoA required>
-                        <option value="INCIDENTE">INCIDENTE</option>
                         <option value="MANTENIMIENTO">MANTENIMIENTO</option>
                         <option value="DESVANECIMIENTO">DESVANECIMIENTO DE COLOR</option>
                         <option value="RAJADURA">RAJADURA</option>

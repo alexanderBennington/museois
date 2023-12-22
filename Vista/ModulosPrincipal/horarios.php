@@ -2,12 +2,12 @@
 
     <h2>HORARIOS</h2>
 
-    <div class="container">
     <div class="tablafondo tablaover">
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th scope="col">DÍA</th>
+                    <th scope="col">FECHA</th>
                     <th scope="col">HORA</th>
                 </tr>
             </thead>
@@ -22,7 +22,6 @@
     <br><br>
     <h3>Agenda Semanal</h3>
 
-    <div class="container">
     <div class="tablafondo tablaover">
         <table class="table table-hover table-striped">
             <thead>
@@ -41,7 +40,6 @@
             </tbody>
         </table>
     </div>
-</div>
 
 
     <h3>¡Guarda tus preocupaciones y tus abrigos! Nuestro Guardarropa te espera.</h3>

@@ -63,5 +63,18 @@
                 </tr>';
             }
         }
+
+        public function mostrarAdministradoresPublicoC(){
+            $tablaBD = 'administracion';
+            $respuesta = AdministradoresM::MostrarAdministradoresM($tablaBD);
+            foreach($respuesta as $key => $value){
+            echo 
+                '<tr>
+                    <td>'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].'</td>
+                    <td>'.$value["area"].'</td>
+                    <td>'.$value["telefono"].'</td>
+                </tr>';
+            }
+        }
     }
 ?>
