@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="Vista/css/sesiones.css">
     <link  href="Vista/img/logoof.ico" rel="shortcut icon">
     <script src="Vista/js/jquery.min.js"></script>
+    <script src="Vista/js/face-api.min.js"></script>
 </head>
 <body>
     <?php

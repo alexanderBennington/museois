@@ -211,3 +211,13 @@ a{
     margin:0 15px 15px 15px;
     font-size: 10px;
 }
+
+video {
+    position: absolute;
+    z-index: 1;
+}
+
+canvas {
+    position: relative;
+    z-index: 20;
+}
