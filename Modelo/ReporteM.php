@@ -68,5 +68,26 @@
             $pdo -> execute();
             return $pdo -> fetchAll();
         }
+
+        static public function GraficaCuentaSolicitudM(){
+            $pdo = ConexionBD::cBD() -> 
+            prepare("SELECT c.nombre_obra, COUNT(*) AS cantidad_repeticiones 
+                FROM solicitud s 
+                JOIN coleccion c ON s.id_articulo = c.id
+                GROUP BY s.id_articulo;
+            ");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+        }
+
+        static public function GraficaCuentaAnomaliasM(){
+            $pdo = ConexionBD::cBD() -> 
+            prepare("SELECT tipo, COUNT(*) AS cantidad_repeticiones 
+            FROM solicitud 
+            GROUP BY tipo;
+            ");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+        }
     }
 ?>

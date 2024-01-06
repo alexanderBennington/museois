@@ -87,5 +87,15 @@
                 </tr>';
             }
         }
+
+        public function GraficaCuentaSolicitudC(){
+            $respuesta = ReporteM::GraficaCuentaSolicitudM();
+            return $respuesta;
+        }
+
+        public function GraficaCuentaAnomaliasC(){
+            $respuesta = ReporteM::GraficaCuentaAnomaliasM();
+            return $respuesta;
+        }
     }
 ?>

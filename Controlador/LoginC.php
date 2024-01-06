@@ -22,7 +22,7 @@
                         echo 'window.location.href = "indicacionesAdmin.php?ruta=inicioadmin"';
                         echo '</script>';
                     } else {
-                        header("location: indicacionesAdmin.php?ruta=ErrorSQLAdmin&error=" . urlencode($respuesta));
+                        header("location:sesionadminerror.php");
                         exit();
                     }
                 }

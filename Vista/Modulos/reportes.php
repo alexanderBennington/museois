@@ -51,6 +51,59 @@
             </tbody>
         </table>
     </div>
+
+    <h2 align=center>Graficas</h2>
+    <div>
+        <canvas id="myChart"></canvas>
+        <?php
+            $data = $reportes -> GraficaCuentaSolicitudC();
+        ?>
+    </div>
+
+    <div>
+        <canvas id="myChart2"></canvas>
+        <?php
+            $data2 = $reportes -> GraficaCuentaAnomaliasC();
+        ?>
+    </div>
 </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode(array_column($data, 'nombre_obra')); ?>,
+            datasets: [{
+                label: 'Grafica Cantidad de Solicitudes por Obra',
+                data: <?php echo json_encode(array_column($data, 'cantidad_repeticiones')); ?>,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            
+        }
+    });
+
+    var myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode(array_column($data2, 'tipo')); ?>,
+            datasets: [{
+                label: 'Grafica Tipo de Anomalias Comunes',
+                data: <?php echo json_encode(array_column($data2, 'cantidad_repeticiones')); ?>,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            
+        }
+    });
+</script>

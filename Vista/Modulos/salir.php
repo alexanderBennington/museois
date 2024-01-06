@@ -1,4 +1,7 @@
 <?php
+    session_start();
     session_destroy();
-    header("location:sesionadmin.php");
+    echo '<script type="text/javascript">';
+    echo 'window.location.href = "sesionadmin.php"';
+    echo '</script>';
 ?>
