@@ -28,5 +28,16 @@
             }
             return $pagina;
         }
+
+        static public function RutasModeloEmpleado($rutas){
+            if($rutas == "principal" || $rutas == "chat" || $rutas == "chatadmins" || $rutas == "chatgeneral" || $rutas == "salir"){
+                $pagina = "Vista/ModulosEmpleado/".$rutas.".php";
+            }else if($rutas == "index"){
+                $pagina = "Vista/ModulosEmpleado/principal.php";
+            }else{
+                $pagina = "Vista/ModulosEmpleado/principal.php";
+            }
+            return $pagina;
+        }
     }
 ?>

@@ -6,7 +6,13 @@
             $pdo -> bindParam(":usuario", $datosC["usuario"], PDO::PARAM_STR);
             $pdo -> execute();
             return $pdo -> fetch();
-            $pdo -> close();
+        }
+
+        static public function VerificarempleadoM($datosC, $tablaBD){
+            $pdo = ConexionBD::cBD() -> prepare("SELECT * FROM $tablaBD WHERE usuario = :usuario");
+            $pdo -> bindParam(":usuario", $datosC["usuario"], PDO::PARAM_STR);
+            $pdo -> execute();
+            return $pdo -> fetch();
         }
     }
 ?>

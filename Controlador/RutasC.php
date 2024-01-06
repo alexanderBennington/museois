@@ -29,5 +29,20 @@
 
             include $respuesta;
         }
+        
+        public function PlantillaEmpleado(){
+            include "Vista/plantilla.php";
+        }
+
+        public function RutasEmpleado(){
+            if(isset($_GET["ruta"])){
+                $rutas = $_GET["ruta"];
+            }else{
+                $rutas = "index";
+            }
+            $respuesta = Modelo::RutasModeloEmpleado($rutas);
+
+            include $respuesta;
+        }
     }
 ?>

@@ -113,5 +113,93 @@
                 }
             }
         }
+
+        //Empleados
+
+        public function RedirigirChatEmpleadosC(){
+            if(isset($_POST["seleccionarid"]) && isset($_POST["id"])){
+                $id = filter_var(trim($_POST["id"]), FILTER_SANITIZE_STRING);
+                echo '<script type="text/javascript">';
+                echo 'window.location.href = "indicaciones.php?ruta=chat&id=' . $id . '"';
+                echo '</script>';
+            }
+        }
+
+        public function RedirigirChatGeneralEmpleadosC(){
+            if(isset($_POST["chatgeneral"])){
+                echo '<script type="text/javascript">';
+                echo 'window.location.href = "indicaciones.php?ruta=chatgeneral"';
+                echo '</script>';
+            }
+        }
+
+        public function RedirigirChatAdminC(){
+            if(isset($_POST["seleccionaridadmin"]) && isset($_POST["id"])){
+                $id = filter_var(trim($_POST["id"]), FILTER_SANITIZE_STRING);
+                echo '<script type="text/javascript">';
+                echo 'window.location.href = "indicaciones.php?ruta=chatadmins&id=' . $id . '"';
+                echo '</script>';
+            }
+        }
+
+        public function MostrarChatEmpleadosC(){
+            $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+            $empleado_empleado = ChatM::MostrarChatEmpleadosM($id); 
+            foreach($empleado_empleado as $key => $value){
+                if($value["id"] == $_SESSION["id"]){
+                    echo'
+                    <div class="cajachat cajachat2" align="left">
+                        <div>
+                            <p class="p1chat">'.$value["mensaje"].'</p>
+                        </div>
+                        <div align="right" >
+                            <p class="p2chat">'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["area"].' '.$value["fecha_envio"].'</p>
+                        </div>
+                    </div>
+                    ';
+                } else{
+                    echo'
+                    <div class="cajachat cajachat1" align="left">
+                        <div>
+                            <p class="p1chat">'.$value["mensaje"].'</p>
+                        </div>
+                        <div align="right">
+                            <p class="p2chat">'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["area"].' '.$value["fecha_envio"].'</p>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
+        }
+        
+        public function MostrarChatEmpleadosAdminsC(){
+            $id = filter_var(trim($_GET["id"]), FILTER_SANITIZE_STRING);
+            $empleado_empleado = ChatM::MostrarChatEmpleadosAdminsM($id); 
+            foreach($empleado_empleado as $key => $value){
+                if($value["id"] == $_SESSION["id"]){
+                    echo'
+                    <div class="cajachat cajachat2" align="left">
+                        <div>
+                            <p class="p1chat">'.$value["mensaje"].'</p>
+                        </div>
+                        <div align="right" >
+                            <p class="p2chat">'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["area"].' '.$value["fecha_envio"].'</p>
+                        </div>
+                    </div>
+                    ';
+                } else{
+                    echo'
+                    <div class="cajachat cajachat1" align="left">
+                        <div>
+                            <p class="p1chat">'.$value["mensaje"].'</p>
+                        </div>
+                        <div align="right">
+                            <p class="p2chat">'.$value["nombre"].' '.$value["apellido_paterno"].' '.$value["apellido_materno"].' '.$value["area"].' '.$value["fecha_envio"].'</p>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
+        }
     }
 ?>
